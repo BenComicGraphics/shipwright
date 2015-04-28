@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(fonts.css);
+@import url(jquery.bxslider.css);
+@import url(keel.css);
+
+/* Base Template Settings */
+
+body											{ background: #fefefe; font-family: "Lato", arial, helvetica, sans-serif; }
+#page-head hgroup, 
+#page-foot section, 
+div section										{ max-width: 1180px; } /* Base Width is Set Here */
+.halves > div > section                         { max-width: 590px; } /* Half Base Width */
+.halves > div > section,
+[class^="box-"], [class*=" box-"]               { padding: 15px; } /* Gutter Width is set here.  Just put half the gutter width here. */
+.cta, input[type=submit], button				{  }
+
+/* Kitchen Sink junk, please delete */
+
+#kitchensink [class^="box-"],
+#kitchensink [class*=" box-"]                   { border: 1px solid #333; }
+ 
+/* Header Settings */
+
+#page-head										{ background: #323232; position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; }
+#page-head hgroup h1.logo, 
+#page-head hgroup h1.logo a	                    { width: 150px; height: 100px; }
+#page-head hgroup #nav                          {  }
+#page-head hgroup #nav #main					{  }
+#page-head hgroup #nav #main a					{ color: #FFF; text-decoration: none; margin: 0px; }
+#page-head hgroup #nav #main .current-menu-item a, #page-head hgroup #nav #main .active a,
+#page-head hgroup #nav #main a:hover            { color: #FEFEFE; opacity: 1; } /* This is the Hover/Active state for the menu item */
+
+/* Header Image Settings */
+
+#header-image, #header-image ul.bxslider li		{  }
+
+/* Content Settings */
+
+#content main a                                 { color: #333; text-decoration: none; } /* Main Link Style */
+
+/* Footer Settings */
+
+#page-foot										{ background: #323232; color :#FFF; padding: 10px 0px; }
+#page-foot .social, #page-foot address			{ display: inline-block; }
+#page-foot cite									{ margin: 10px 0px 0px 0px; font-size: .75em; }
+
+@media handheld, only screen and (max-width: 1179px) and (min-width: 767px) { /* Set max-width as base-width minus 1 pixel */
+
+}
+
+@media handheld, only screen and (max-width: 766px) {		
+	
+	/* Mobile Menu styles */
+	
+    #page-head                                  { height: 50px; }
+    #page-head hgroup h1.logo,
+    #page-head hgroup h1.logo a                 { height: 40px; background-size: contain; }
+    #page-head hgroup #nav						{ background: #333;}
+    #page-head hgroup #nav #main                {  }
+	#page-head hgroup #nav #main li a		    { padding: 20px;  }	
+	#page-head hgroup #nav #main li ul	        {  }
+    #page-head hgroup #nav #main li ul li a     {  }
+	#page-head hgroup .toggle:before		    { content: "\e61b"; } /* 614,615,616,617,618,619,61c,61d,61ce */ 
+
+
+}
+
+@media handheld, only screen and (max-width: 420px) {
+	body                                        { font-size: 125%; } 
+}
