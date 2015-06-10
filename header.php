@@ -16,7 +16,6 @@
 <header id="page-head">
   <hgroup>
     <h1 class="logo"><a href="<?php echo esc_url(home_url('/')); ?>" style="background-image:url(<?php the_field('header_logo', 'options'); ?>);" title="<?php bloginfo('name'); ?>"><span><?php bloginfo('name'); ?></span></a></h1>
-    <h2><?php bloginfo('description'); ?></h2>
     <input type="checkbox" id="toggle" />
 	<label for="toggle" class="toggle" onclick></label>
     <nav id="nav">

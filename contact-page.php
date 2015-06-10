@@ -1,89 +1,22 @@
 <?php
 /*
-Template Name: Front Page
+Template Name: Contact Page
 */
 ?>
 <?php get_header(); ?>
 
-<?php if( have_rows('slides') ): ?>
-<div id="header-image" class="full-height">
-  <ul class="bxslider full-height">
-<?php while ( have_rows('slides') ) : the_row(); ?>      
-    <li style="background-image: url(<?php the_sub_field('image'); ?>);"  class="full-height">
-      <div class="vert-center full-height">
-        <section>
-          <h2>Harkinson Investment Corporation</h2>  
-          <h3>Pride in Ownership</h3>
-        </section>
-      </div>
-      <div class="infobox">
-        <h4><?php the_sub_field('title'); ?></h4>  
-        <h5><?php the_sub_field('sub_title'); ?></h5>
-        <?php the_sub_field('copy'); ?>
-      </div>
-    </li>
-<?php endwhile; ?>
-  </ul>
-</div>
-<?php endif;?>
-
-<div class="headlinez">
+<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
+<div id="header-image" class="vert-bottom" style="background-image:url(<?php echo $feat_image; ?>)">
   <section>
-    <?php the_field('about_us_section'); ?>
+    <h2><?php the_title(); ?></h2>
   </section>    
 </div>
     
-<div class="tab-bg" style="background-image: url(<?php the_field('portfolio_bg'); ?>);">
+<div id="contact-page">
   <section>
-    <a href="<?php the_field('portfolio_link'); ?>" class="tab">View Our Portfolio</a>  
-  </section>
-</div>
-    
-<div class="headlinez">
-  <section>
-    <?php the_field('services_section'); ?>
-  </section>    
-</div>
-    
-<?php if( have_rows('services_icons') ): ?>
-<ul class="iconz">
-<?php while ( have_rows('services_icons') ) : the_row(); ?>   
-  <li class="<?php the_sub_field('icon'); ?> box-1-3">
-    <strong><?php the_sub_field('title'); ?></strong>
-    <?php the_sub_field('copy'); ?>
-  </li>  
-<?php endwhile; ?>
-</ul>
-<?php endif;?>
-
-<div class="tab-bg" style="background-image: url(<?php the_field('available_properties_bg'); ?>);">
-  <section>
-    <a href="<?php the_field('available_properties_link'); ?>" class="tab">View Available Properties</a>  
-  </section>
-</div>
-
-    
-<div class="headlinez">
-  <section>
-    <?php the_field('contact_section'); ?>
-  </section>    
-</div>
-    
-<?php if( have_rows('cta_boxes') ): ?>
-<div class="ctaboxes">
-  <section class="row">
-<?php while ( have_rows('cta_boxes') ) : the_row(); ?> 
-    <a href="<?php the_sub_field('link'); ?>" class="box-1-2"><strong><?php the_sub_field('title'); ?></strong> <?php the_sub_field('text'); ?></a>  
-<?php endwhile; ?>
-  </section>
-</div>
-<?php endif;?>
-    
-<div class="tab-bg">
-  <section>
-    <a href="<?php the_field('contact_link'); ?>" class="tab">CONTACT THE HARKINSON’S TEAM</a>  
-  </section>
-  <div id="map-canvas"></div>
+    <div class="row">
+    <div class="map-holder box-1-2">
+        <div id="map-canvas"></div>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script type='text/javascript'>
 var map;
@@ -222,6 +155,23 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script> 
+        
+        
+        
+    </div>  
+    <div class="contact-info box-1-2">
+      <h3>Contact Our Team</h3>  
+      <address class="twocol"> 
+        <?php if(get_field('street_address','options')){ ?><a href="<?php the_field('maps_link', 'options'); ?>"><?php the_field('street_address', 'options'); ?></a><?php } ?><br />
+        <?php if(get_field('phone_number','options')){ ?>P: <a href="tel:<?php the_field('phone_number','options'); ?>"><?php the_field('phone_number','options'); ?></a><?php } ?><br />
+      <?php if(get_field('email_address','options')){ ?>E: <a href="mailto:<?php the_field('email_address','options'); ?>"><?php the_field('email_address','options'); ?></a><?php } ?><br />
+      </address>    
+     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>     
+        <?php the_content(); ?>
+    <?php endwhile; endif; ?>
+    </div>
+    </div>
+  </section>    
 </div>
 
 <?php get_footer(); ?>

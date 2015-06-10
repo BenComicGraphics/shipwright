@@ -1,54 +1,64 @@
 <footer id="page-foot">
   <section>
+      
+    <h5 class="footer-logo box-1-4">
+      <a href="#" style="background-image: url(<?php the_field('footer_logo', 'options'); ?>);"><span>Harkinson Investment Corporation</span></a>  
+    </h5>  
     
     <address>
-      <h3>Contact Us</h3>
-      <?php if(get_field('street_address')){ ?><?php the_field('street_address', 'options'); ?>  <?php } ?>
+      <h5>Contact</h5>
+      <?php if(get_field('street_address','options')){ ?><a href="<?php the_field('maps_link', 'options'); ?>"><?php the_field('street_address', 'options'); ?></a><?php } ?><br /><br />
+        
+      <?php if(get_field('phone_number','options')){ ?><a href="tel:<?php the_field('phone_number','options'); ?>"><?php the_field('phone_number','options'); ?></a><?php } ?><br />
+      <?php if(get_field('phone_number_2','options')){ ?><a href="tel:<?php the_field('phone_number_2','options'); ?>"><?php the_field('phone_number_2','options'); ?></a><?php } ?><br />
+      <?php if(get_field('email_address','options')){ ?><a href="mailto:<?php the_field('email_address','options'); ?>"><?php the_field('email_address','options'); ?></a><?php } ?><br />
     </address>
     
-    <ul class="social">
-      <li class="header"><h3>Share</h3></li>
-      <?php if(get_field('facebook', 'options')){ ?> 
-        <li class="fb"><a href="<?php the_field('facebook', 'options'); ?>" target="_blank"><span>Facebook</span></a></li> 
-      <?php } ?> 
-      <?php if(get_field('twitter', 'options')){ ?> 
-        <li class="tw"><a href="<?php the_field('twitter', 'options'); ?>" target="_blank"><span>Twitter</span></a></li> 
-      <?php } ?> 
-      <?php if(get_field('google_plus', 'options')){ ?> 
-        <li class="gp"><a href="<?php the_field('google_plus', 'options'); ?>" target="_blank"><span>Google Plus</span></a></li>  
-      <?php } ?> 
-      <?php if(get_field('pinterest', 'options')){ ?> 
-        <li class="pi"><a href="<?php the_field('pinterest', 'options'); ?>" target="_blank"><span>Pinterest</span></a></li> 
-      <?php } ?> 
-      <?php if(get_field('youtube', 'options')){ ?> 
-        <li class="yt"><a href="<?php the_field('youtube', 'options'); ?>" target="_blank"><span>YouTube</span></a></li>
-      <?php } ?> 
-      <?php if(get_field('linkedin', 'options')){ ?> 
-        <li class="in"><a href="<?php the_field('linkedin', 'options'); ?>" target="_blank"><span>LinkedIn</span></a></li> 
-      <?php } ?> 
-      <?php if(get_field('tumblr', 'options')){ ?> 
-        <li class="tu"><a href="<?php the_field('tumblr', 'options'); ?>" target="_blank"><span>Tumblr</span></a></li>
-      <?php } ?> 
-      <?php if(get_field('vimeo', 'options')){ ?> 
-        <li class="vi"><a href="<?php the_field('vimeo', 'options'); ?>" target="_blank"><span>Vimeo</span></a></li>
-      <?php } ?> 
-      <?php if(get_field('instagram', 'options')){ ?> 
-        <li class="ig"><a href="<?php the_field('Instagram', 'options'); ?>" target="_blank"><span>Instagram</span></a></li>
-      <?php } ?> 
-    </ul>
-    
-    <nav>
-      <h3><?php bloginfo('name'); ?></h3>
-      <?php wp_nav_menu( array( 'menu' => 'Main Menu','menu_id' => 'main','container' => false ) ); ?>       
-    </nav>
+    <nav class="footer-nav">
+      <h5>Site Map</h5>  
+      <?php wp_nav_menu( array( 'menu' => 'Footer Menu','menu_class' => 'threecol','container' => false ) ); ?>          
 
-    <cite>Copyright <?php echo esc_html( get_bloginfo('name') ); ?></cite>
+    </nav>
     
-    
-    <a href="http://www.steadfastcreative.com/" target="_blank" class="sfc"><span>Site by Steadfast Creative</span></a>
   </section>
+  <div class="bottombar">
+    <section>
+      <cite>Copyright <?php echo esc_html( get_bloginfo('name') ); ?></cite>
+      <a href="http://www.steadfastcreative.com/" target="_blank" class="sfc"><span>Site by Steadfast Creative</span></a>
+    </section>
+  </div>
 </footer>
+<?php the_field('google_analytics', 'options'); ?>
 <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/footer.js"></script>
 <?php wp_footer(); ?>
+<script>
+jQuery(function ($) {  
+   // Filter Ajax Load More
+   var alm_is_animating = false;
+  
+   // Nav btn click event
+   $('#portfolio-filters li a').on('click', function(e){    
+      e.preventDefault();  
+      var el = $(this); // Our selected element     
+      
+      if(!el.hasClass('active') && !alm_is_animating){ // Check for active and !alm_is_animating  
+         alm_is_animating = true;   
+         $('.active').removeClass('active');
+         el.parent().addClass('active'); // Add active state       
+      
+         var data = el.data(), // Get data values from selected menu item
+             transition = 'fade', // 'slide' | 'fade' | null
+             speed = '300'; //in milliseconds
+             
+         $.fn.almFilter(transition, speed, data); // reset Ajax Load More (transition, speed, data)     
+      }      
+   });
+   
+   $.fn.almFilterComplete = function(){      
+      alm_is_animating = false; // clear alm_isanimating flag
+   };
+   
+}); 
+</script>
 </body>
 </html>

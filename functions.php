@@ -7,18 +7,51 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
-add_action('after_setup_theme', 'shipwright_setup');
-function shipwright_setup()
-{
-load_theme_textdomain('shipwright', get_template_directory() . '/languages');
-add_theme_support('automatic-feed-links');
-add_theme_support('post-thumbnails');
-global $content_width;
-if ( ! isset( $content_width ) ) $content_width = 640;
-register_nav_menus(
-array( 'main-menu' => __( 'Main Menu', 'shipwright' ) )
-);
+add_action('init', 'register_my_menus');
+ 
+function register_my_menus() {
+    register_nav_menus( array(
+      'main_menu' => 'Main Menu',
+      'footer_menu' => 'Footer Menu'
+ ));
 }
+
+
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {    
+  register_post_type( 'Portfolio',
+    array(
+      'labels' => array(
+        'name' => __( 'Portfolio' ),
+        'singular_name' => __( 'Property' )
+      ),
+      'public'        => true,
+      'menu_position' => 5,
+      'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+      'has_archive'   => true,
+      'taxonomies' => array('',),
+    )
+  );
+  register_post_type( 'Availabilities',
+    array(
+      'labels' => array(
+        'name' => __( 'Availabilities' ),
+        'singular_name' => __( 'Property' )
+      ),
+      'public'        => true,
+      'menu_position' => 6,
+      'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+      'has_archive'   => true,
+      'taxonomies' => array('',),
+    )
+  );  
+    
+}
+
+add_theme_support( 'post-thumbnails' );
+
+
 add_action('comment_form_before', 'shipwright_enqueue_comment_reply_script');
 function shipwright_enqueue_comment_reply_script()
 {

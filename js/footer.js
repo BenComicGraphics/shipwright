@@ -1,9 +1,17 @@
 /* Modifiable code starts here */
 
+// Table Sort //
+
+$(document).ready(function(){ $("#suites").tablesorter(); });  
+
 // Tabs functionality goes here //
 
 $(function() { $( "#tabs" ).tabs(); });
-   
+
+// Filter //
+
+$(document).ready(function(){
+    $("#portfolio-filters .filter").on("click",function(){$(this).toggleClass("expand")})})
     
 // bxSlider Stuff Goes Here //
 
@@ -13,16 +21,21 @@ $(document).ready(function(){ $('.bxslider').bxSlider(); });
 // Sticky Header functionality goes here //
 
 $(function(){
-	var stickyHeaderTop = $('#header-image').offset().top;
+	var stickyHeaderTop = 1;
 		$(window).scroll(function(){
         	if( $(window).scrollTop() > stickyHeaderTop ) {
-            	$('#page-head').addClass('navfixed');
+            	$('#page-head').addClass('fixed');
 			} else {
-				$('#page-head').removeClass('navfixed');
+				$('#page-head').removeClass('fixed');
 			}
 	});
 });
 
+$(function(){
+if (!$('body').hasClass("home")) {
+ $('header').addClass('center-logo');   
+}
+});
 
 // Fade-in Parallaxing //
 /*

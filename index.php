@@ -1,19 +1,12 @@
 <?php get_header(); ?>
-<div id="header-image" style="background-image:url(<?php echo $feat_image; ?>)">
+<div id="header-image" class="vert-bottom" style="background-image:url(<?php the_field('blog_header','options'); ?>)">
   <section>
-    <h1><?php the_title(); ?></h1>
+    <h2><?php the_title(); ?></h2>
   </section>
 </div>
-<div id="content">
+<div id="archive">
   <section>
-    <main> 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <?php get_template_part('entry'); ?>
-      <?php comments_template(); ?>
-    <?php endwhile; endif; ?>
-    <?php get_template_part('nav', 'below'); ?>
-    </main>
-    <?php get_sidebar(); ?>
+     <?php echo do_shortcode('[ajax_load_more post_type="post" posts_per_page="9" max_pages="0" button_label="Show More"]'); ?>
   </section>
 </div>
 <?php get_footer(); ?>
