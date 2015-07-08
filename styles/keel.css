@@ -3,7 +3,7 @@
 
 /* Standard resets and settings */
 
-*												{ margin: 0px; padding: 0px; font-weight: normal; font-style: normal; outline: none; -webkit-appearance: none; }
+*												{ margin: 0px; padding: 0px; font-weight: normal; font-style: normal; -webkit-backface-visibility:hidden; outline: none; -webkit-appearance: none; }
 *, *:before, *:after                            { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 html                                            { max-width: 100%; }
 body                                            { width: 100%; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
@@ -91,18 +91,18 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 /* Header Settings with center logo */
 
 #page-head.center-logo hgroup h1.logo           { margin: auto; float: none; display: block; position: relative; z-index: 1; }
-#page-head.center-logo hgroup #nav              { position: relative;  margin-top: -118px; display: block; width: 100%; right: -30px; }
+#page-head.center-logo hgroup #nav              { position: relative;  margin-top: -60px; display: block; width: 100%; }
 #page-head.center-logo hgroup #nav #main        { width: 100%; text-align: center; }
 
 /* Special Code for Menu centering */
 
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1):after     { content: " "; width: 250px; display: inline-block; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(2):after     { content: " "; width: 250px; display: inline-block; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(3):after     { content: " "; width: 250px; display: inline-block; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1):after     { content: " "; width: 150px; display: inline-block; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(2):after     { content: " "; width: 150px; display: inline-block; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(3):after     { content: " "; width: 150px; display: inline-block; }
 #page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(2):after     { display: none; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(4):after     { content: " "; width: 250px; display: inline-block; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(4):after     { content: " "; width: 150px; display: inline-block; }
 #page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(3):after     { display: none; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(5):after    { content: " "; width: 250px; display: inline-block; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(5):after    { content: " "; width: 150px; display: inline-block; }
 #page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(4):after    { display: none; }
 
 /* Header Image Settings */
@@ -296,8 +296,6 @@ aside .widgets li								{ width: 100%; display: block; box-sizing: border-box; 
 
 /* Form Settings */
 
-
-
 ::-webkit-input-placeholder                     { color: #848484; }
 :-moz-placeholder                               { color: #848484; }
 ::-moz-placeholder                              { color: #848484; }
@@ -389,6 +387,9 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 
 
 @media handheld, only screen and (max-width: 1179px) and (min-width: 767px) { /* Set max-width as base-width minus 1 pixel */
+	#page-head hgroup, 
+	#page-foot section, 
+	div section									{ width: 100%; padding-left: 25px; padding-right: 25px; }
     #content main                               {  }
     #content aside                              {  }
 
@@ -440,7 +441,5 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 	#page-head hgroup .toggle:before		    { font-family: 'Icons'; font-size: 40px; -webkit-font-smoothing: antialiased!important; content: "\e61b"; } /* 614,615,616,617,618,619,61c,61d,61ce */ 
 	
     #page-head hgroup #toggle:checked ~ #nav	{ display: block!important; max-height: 1200%!important; overflow: auto!important; }
-    
-
 
 }
