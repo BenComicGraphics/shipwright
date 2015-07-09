@@ -16,9 +16,9 @@ $(function(){
 	var stickyHeaderTop = $('#header-image').offset().top;
 		$(window).scroll(function(){
         	if( $(window).scrollTop() > stickyHeaderTop ) {
-            	$('#page-head').addClass('navfixed');
+            	$('.stickynav').addClass('navfixed');
 			} else {
-				$('#page-head').removeClass('navfixed');
+				$('.stickynav').removeClass('navfixed');
 			}
 	});
 });
