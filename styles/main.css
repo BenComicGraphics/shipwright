@@ -11,8 +11,8 @@ body											{ background: #fefefe; font-family: "Lato", arial, helvetica, san
 #page-head hgroup, 
 #page-foot section, 
 div section										{ max-width: 1180px; } /* Base Width is Set Here */
-.halves > div > section                         { max-width: 590px; } /* Half Base Width */
-.halves > div > section,
+.halves > .half > section                       { max-width: 590px; } /* Half Base Width */
+.halves > .half > section,
 [class^="box-"], [class*=" box-"]               { padding: 15px; } /* Gutter Width is set here.  Just put half the gutter width here. */
 .cta, input[type=submit], button				{  }
 
@@ -56,13 +56,12 @@ div section										{ max-width: 1180px; } /* Base Width is Set Here */
 	
     #page-head                                  { height: 50px; }
     #page-head hgroup h1.logo,
-    #page-head hgroup h1.logo a                 { height: 40px; background-size: contain; }
+    #page-head hgroup h1.logo a                 { height: 50px; background-size: contain; }
     #page-head hgroup #nav						{ background: #333;}
     #page-head hgroup #nav #main                {  }
 	#page-head hgroup #nav #main li a		    { padding: 20px;  }	
 	#page-head hgroup #nav #main li ul	        {  }
     #page-head hgroup #nav #main li ul li a     {  }
-	#page-head hgroup .toggle:before		    { content: "\e61b"; } /* 614,615,616,617,618,619,61c,61d,61ce */ 
 
 
 }

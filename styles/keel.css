@@ -31,6 +31,11 @@ article article, section section				{ display: block!important; width: auto!impo
 .left                                           { float: left!important; }
 .right                                          { float: right!important; }
 
+/* Typekit FOUT Fix */
+
+.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading li, .wf-loading p, .wf-loading a    { visibility: hidden; }  
+.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active li, .wf-active p, .wf-active a            { visibility: visible; }
+
 /* Details Settings */
  
 details, summary, details.closed > summary,
@@ -90,20 +95,33 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 
 /* Header Settings with center logo */
 
-#page-head.center-logo hgroup h1.logo           { margin: auto; float: none; display: block; position: relative; z-index: 1; }
-#page-head.center-logo hgroup #nav              { position: relative;  margin-top: -60px; display: block; width: 100%; }
+#page-head.center-logo hgroup                   { position: relative; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d; }
+#page-head.center-logo hgroup h1.logo           { margin: auto; float: none; display: block; position: relative; z-index: 2; }
+#page-head.center-logo hgroup #nav              { position: absolute;  top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); display: block; width: 100%; z-index: 1; }
 #page-head.center-logo hgroup #nav #main        { width: 100%; text-align: center; }
 
 /* Special Code for Menu centering */
 
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1):after     { content: " "; width: 150px; display: inline-block; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(2):after     { content: " "; width: 150px; display: inline-block; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(3):after     { content: " "; width: 150px; display: inline-block; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(2):after     { display: none; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(4):after     { content: " "; width: 150px; display: inline-block; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(3):after     { display: none; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(5):after    { content: " "; width: 150px; display: inline-block; }
-#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(4):after    { display: none; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(2),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(3),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(4),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(5)  { margin-right: 75px; }
+
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(3),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(4),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(5),
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(6)  { margin-left: 75px; }
+
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(2)   { margin-right: 0px; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(3)   { margin-right: 0px; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(4)  { margin-right: 0px; }
+
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(3)   { margin-left: 0px; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(4)   { margin-left: 0px; }
+#page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(5)  { margin-left: 0px; }
+
 
 /* Header Image Settings */
 
@@ -123,6 +141,14 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 .threecol										{ column-count: 3; -webkit-column-count: 3; -moz-column-count: 3; }
 .fourcol										{ column-count: 4; -webkit-column-count: 4; -moz-column-count: 4; }
 .twocol hr, .threecol hr, .fourcol hr           { -webkit-column-break-before: always; -moz-column-break-before: always; column-break-before: always; visibility: hidden; }
+
+/* Box Settings */
+
+.boxcontainer                                   { width: 100%; clear: both; }
+.boxcontainer:after                             { clear: both; display: block; width: 100%; height: 0px; content: " "; }
+
+.box-1-1, .box-2-2, .box-3-3, .box-4-4-, .box-5-5, .box-6-6, .box-7-7, .box-8-8, .box-9-9, .box-10-10, .box-11-11,
+.box-12-12                                      { width: 100%; }    
 
 .box-1-2, .box-2-4, .box-3-6, .box-4-8, 
 .box-5-10, .box-6-12                            { width: 50%; }
@@ -194,11 +220,13 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 .centerbox [class^="box-"], 
 .centerbox [class*=" box-"]	                    { float: none; display: inline-block; }
 
+/* Halves Settings */
+
 .halves                                         { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
-.halves > div                                   { width: 50%; display: block; float: left; }
-.halves > div > section                         { width: 100%; display: block;  }
-.halves > div:first-child > section             { float: right; }
-.halves > div:last-child > section              { float: left; }
+.halves > .half                                 { width: 50%; display: block; float: left; }
+.halves > .half > section                       { width: 100%; display: block;  }
+.halves > .half:first-child > section           { float: right; }
+.halves > .half:last-child > section            { float: left; }
 
 /* Listed Row */
 
@@ -247,7 +275,7 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 
 .full-height                                    { min-height: 100vh; }
 
-/* Video Container */
+/* Video Container and Video Background */
 
 .video-container                                { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
 .video-container iframe, .video-container object, 
@@ -255,6 +283,15 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 
 .vid-bg                                         { position: absolute; width: 100%; overflow: hidden; z-index: 0; top: 0px; left: 0px; }
 .vid-bg video                                   { position: absolute; bottom: 50%; right: 50%; transform: translateX(50%) translateY(50%); -webkit-transform: translateX(50%) translateY(50%); min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden; }
+
+/* Alternating Setting */
+
+.alternating > *:nth-child(odd) > *:nth-child(odd),
+.alternating > *:nth-child(even) > *:nth-child(even) { order: 1; -webkit-order: 1; }
+
+.alternating > *:nth-child(even) > *:nth-child(odd),
+.alternating > *:nth-child(odd) > *:nth-child(even) { order: 2; -webkit-order: 2; }
+
 
 /* Widgets Settings */
 
@@ -266,8 +303,8 @@ aside .widgets li								{ width: 100%; display: block; box-sizing: border-box; 
 #searchform										{ display: inline-block; font-size: 0px; line-height: 0px; position: relative; } 
 #searchform input, #searchform button			{ display: inline-block; float: left; }
 #searchform input								{ padding: 5px; height: 30px; box-sizing: border-box; width: 100%; border: 1px solid #333; border-right: 0px; font-size: 15px; }
-#searchform button								{ height: 30px; padding: 5px; border: 1px solid #333; border-left: 0px; font-size: 30px; background: #FFF; width: 30px; color: #333; font-family: 'Icons'; -webkit-transition: background-color 1000ms linear; -moz-transition: background-color 1000ms linear; -o-transition: background-color 1000ms linear; -ms-transition: background-color 1000ms linear; transition: background-color 1000ms linear; cursor: pointer; position: absolute; top: 0px; right: 0px; }
-#searchform button:before						{ content: "\e613"; position: absolute; top: 0px; left: 0px; line-height: 26px; }
+#searchform button								{ height: 30px; padding: 5px; border: 1px solid #333; border-left: 0px; font-size: 30px; background: #FFF; width: 30px; color: #333; font-family: 'FontAwesome'; -webkit-transition: background-color 1000ms linear; -moz-transition: background-color 1000ms linear; -o-transition: background-color 1000ms linear; -ms-transition: background-color 1000ms linear; transition: background-color 1000ms linear; cursor: pointer; position: absolute; top: 0px; right: 0px; }
+#searchform button:before						{ content: "\f002"; position: absolute; top: 0px; left: 0px; line-height: 26px; }
 #searchform input[type=search]:focus			{ outline: none; }
 #searchform input[type=search]:focus + button	{ color: #FFF; background: #333; }
 
@@ -326,29 +363,29 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 
 .social li										{ width: auto; margin: 0px 5px 0px 0px; }
 .social .header									{ display: block; }
-.social a										{ width: 30px; height: 30px; text-decoration: none; display: inline-block; font-family: 'Icons'; font-size: 30px; color: #fff; text-align: left; -webkit-font-smoothing: antialiased!important; }
+.social a										{ width: 20px; height: 20px; text-decoration: none; display: inline-block; font-family: 'FontAwesome'; font-size: 20px; color: #fff; text-align: left; -webkit-font-smoothing: antialiased!important; line-height: 1; }
 .social.round a                                 { border-radius: 50%; }
 
-.social .fb a:before                            { content: "\e600"; } 
-.social .tw a:before                            { content: "\e602"; } 
-.social .gp a:before                            { content: "\e604"; } 
-.social .yt a:before                            { content: "\e606"; } 
-.social .in a:before                            { content: "\e608"; } 
-.social .vi a:before                            { content: "\e60a"; } 
-.social .tu a:before                            { content: "\e60c"; }
-.social .ig a:before                            { content: "\e60e"; } 
-.social .pi a:before                            { content: "\e60f"; } 
-.social .gh a:before                            { content: "\e610"; }
-.social .dr a:before                            { content: "\e611"; }
-.social .ye a:before                            { content: "\e612"; }
+.social .fb a:before                            { content: "\f09a"; } 
+.social .tw a:before                            { content: "\f099"; } 
+.social .gp a:before                            { content: "\f0d5"; } 
+.social .yt a:before                            { content: "\f167"; } 
+.social .in a:before                            { content: "\f0e1"; } 
+.social .vi a:before                            { content: "\f27d"; } 
+.social .tu a:before                            { content: "\f173"; }
+.social .ig a:before                            { content: "\f16d"; } 
+.social .pi a:before                            { content: "\f231"; } 
+.social .gh a:before                            { content: "\f09b"; }
+.social .dr a:before                            { content: "\f17d"; }
+.social .ye a:before                            { content: "\f1e9"; }
 
-.social.icon .fb a:before                       { content: "\e601"; } 
-.social.icon .tw a:before                       { content: "\e603"; } 
-.social.icon .gp a:before                       { content: "\e605"; } 
-.social.icon .yt a:before                       { content: "\e607"; } 
-.social.icon .in a:before                       { content: "\e609"; } 
-.social.icon .vi a:before                       { content: "\e60b"; } 
-.social.icon .tu a:before                       { content: "\e60d"; } 
+.social.icon .fb a:before                       { content: "\f230"; } 
+.social.icon .tw a:before                       { content: "\f081"; } 
+.social.icon .gp a:before                       { content: "\f0d4"; } 
+.social.icon .yt a:before                       { content: "\f166"; } 
+.social.icon .in a:before                       { content: "\f08c"; } 
+.social.icon .vi a:before                       { content: "\f194"; } 
+.social.icon .tu a:before                       { content: "\f174"; } 
 
 .social.bgcolor .fb a                           { background-color: #3b5998 }
 .social.bgcolor .tw a                           { background-color: #00aced }
@@ -374,22 +411,21 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 
 .sharedaddy .sd-title                           { display: none; }
 .sharedaddy                                     { text-align: left; }
-.sharedaddy .sd-content ul li a.sd-button{ width: 28px; height: 28px; background-color: none!important; border: none!important; box-shadow: none!important; margin: 0px 10px 5px 0px; border-radius: 5px!important; }
+.sharedaddy .sd-content ul li a.sd-button{ width: 20px; height: 20px; background-color: none!important; border: none!important; box-shadow: none!important; margin: 0px 10px 5px 0px; border-radius: 5px!important; }
 .sharedaddy .sd-content ul li a.sd-button:before{ font-family: 'Icons'; font-size: 28px; text-align: left; }
 
-.sharedaddy .sd-content ul .share-facebook a.sd-button:before       { content: "\e601"!important; color: #3b5998!important } 
-.sharedaddy .sd-content ul .share-twitter a.sd-button:before        { content: "\e603"!important; color: #00aced!important }
-.sharedaddy .sd-content ul .share-google-plus-1 a.sd-button:before  { content: "\e605"!important; color: #dd4b39!important }
-.sharedaddy .sd-content ul .share-linkedin a.sd-button:before       { content: "\e609"!important; color: #007bb6!important }
+.sharedaddy .sd-content ul .share-facebook a.sd-button:before       { content: "\f230"!important; color: #3b5998!important } 
+.sharedaddy .sd-content ul .share-twitter a.sd-button:before        { content: "\f081"!important; color: #00aced!important }
+.sharedaddy .sd-content ul .share-google-plus-1 a.sd-button:before  { content: "\f0d4"!important; color: #dd4b39!important }
+.sharedaddy .sd-content ul .share-linkedin a.sd-button:before       { content: "\f08c"!important; color: #007bb6!important }
 
-.sfc											{ display: block; width: 40px; height: 40px; font-size: 40px; color: #FFF; font-family: 'Icons'; float: right; text-decoration: none; -webkit-font-smoothing: antialiased!important; }
-.sfc:before										{ content: "\e61a"; }
+.sfc											{ display: block; width: 20px; height: 20px; color: #FFF; float: right; text-decoration: none; background-image: url('../images/steadfast.svg'); background-size: contain }
 
 
 @media handheld, only screen and (max-width: 1179px) and (min-width: 767px) { /* Set max-width as base-width minus 1 pixel */
 	#page-head hgroup, 
 	#page-foot section, 
-	div section									{ width: 100%; padding-left: 25px; padding-right: 25px; }
+	div section									{ width: 100%; padding-left: 15px; padding-right: 15px; }
     #content main                               {  }
     #content aside                              {  }
 
@@ -398,7 +434,7 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 @media handheld, only screen and (max-width: 766px) {		
     #page-head hgroup, 
 	#page-foot section, 
-	div section, .halves > div,
+	div section, .halves > .half,
 	.bricks										{ width: 100%; padding: 0px 15px; }
 	article, .listed li, [class^="box-"], 
     [class*=" box-"]                            { width: 100%!important; padding: 0px 0px; float: none!important }
@@ -409,6 +445,13 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 	.mobileonly, .rpw, .justified    			{ display: block!important; }
 	article img, .alignright, .alignleft		{ max-width: 90%!important; height: auto!important; margin: 15px auto!important; float: none!important; }
 	.twocol, .threecol, .fourcol				{ column-count: 1; -webkit-column-count: 1; -moz-column-count: 1; }
+    
+    .alternating > *:nth-child(odd) > *:nth-child(odd),
+    .alternating > *:nth-child(even) > *:nth-child(odd){ order: 1; -webkit-order: 1; }
+
+    .alternating > *:nth-child(even) > *:nth-child(even),
+    .alternating > *:nth-child(odd) > *:nth-child(even){ order: 2; -webkit-order: 2; }
+    
 	
 	/* Mobile Menu styles */
 	
@@ -416,16 +459,20 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
     #page-head.center-logo hgroup h1.logo       { margin: 0px; }
     #page-head hgroup                           { padding-left: 0px; padding-right: 0px; }
     #page-head hgroup h1.logo,
-    #page-head hgroup h1.logo a                 { height: 40px; background-size: contain; }
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1):after,
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(2):after,
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(3):after,
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(2):after,
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(4):after,
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(3):after,
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(5):after,
-    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(4):after{ display: none!important; }
-    #page-head.center-logo hgroup #nav          { position: absolute; margin-top: 0px; text-align: right; }
+    #page-head hgroup h1.logo a                 { height: 50px; background-size: contain; }
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(2),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(3),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(4),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(5)  { margin-right: 0px; }
+
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+2) ~ li:nth-child(1),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+4) ~ li:nth-child(3),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+6) ~ li:nth-child(4),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+8) ~ li:nth-child(5),
+    #page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(6)  { margin-left: 0px; }
+      
+    #page-head.center-logo hgroup #nav          { position: absolute; margin-top: 0px; text-align: right; top: 100%; transform: none;  -webkit-transform: none; }
     #page-head hgroup #nav						{ display: block!important; width: 100%; max-height: 0px; overflow: hidden; -webkit-transition: max-height 0.8s; -moz-transition: max-height 0.8s; transition: max-height 0.8s; position: absolute; z-index: 2; width: auto; top: 50px; right: 0px; width: 100%; overflow-y: hidden; background: #333;  }
     #page-head hgroup #nav #main                { text-align: right; display: block!important; }
 	#page-head hgroup #nav #main,
@@ -438,8 +485,8 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
     #page-head hgroup #nav #main .menu-item-has-children ul.expand  { display: block!important; position: static; }
 
 	#page-head hgroup .toggle      		        { width: 40px; height: 40px; float: right; display: block; color: #fff; text-decoration: none; position: absolute; top: 5px; right: 15px; z-index: 3; text-align: left; }
-	#page-head hgroup .toggle:before		    { font-family: 'Icons'; font-size: 40px; -webkit-font-smoothing: antialiased!important; content: "\e61b"; } /* 614,615,616,617,618,619,61c,61d,61ce */ 
-	
-    #page-head hgroup #toggle:checked ~ #nav	{ display: block!important; max-height: 1200%!important; overflow: auto!important; }
+	#page-head hgroup .toggle:before		    { font-family: 'FontAwesome'; font-size: 40px; -webkit-font-smoothing: antialiased!important; content: "\f0c9"; transition: all .25s ease-in; } 	
+    #page-head hgroup #toggle:checked ~ #nav	{ display: block!important; max-height: calc( 100vh - 80px )!important; overflow: auto!important; }
+    #page-head hgroup #toggle:checked ~ .toggle:before { content: "\f00d" }
 
 }
