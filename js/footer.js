@@ -1,17 +1,17 @@
 /* Modifiable code starts here */
 
 // Tabs functionality goes here //
-
+/*
 $(function() { $( "#tabs" ).tabs(); });
-   
+*/ 
     
 // bxSlider Stuff Goes Here //
-
+/*
 $(document).ready(function(){ $('.bxslider').bxSlider(); });
-
+*/
 
 // Sticky Header functionality goes here //
-
+/*
 $(function(){
 	var stickyHeaderTop = $('#header-image').offset().top;
 		$(window).scroll(function(){
@@ -22,6 +22,14 @@ $(function(){
 			}
 	});
 });
+*/
+
+// Fancybox //
+/* 
+$(document).ready(function() {
+		$(".fancybox").fancybox();
+});
+*/
 
 
 // Fade-in Parallaxing //
@@ -50,19 +58,20 @@ $(document).ready(function(){
 */
 
 // Safari Fixes //
-
+/*
 $(document).ready(function() {
    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && ($(document).width() >= 768)){
   // fixes go here //
   } 
- 
 });
+*/
 
 // Masonry Code //
-
+/*
 var $container = $('.blocks');
 // init
 $container.packery({
   itemSelector: 'li',
   gutter: 0
 });    
+*/
