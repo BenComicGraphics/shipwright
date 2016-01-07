@@ -473,7 +473,7 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
     #page-head.center-logo hgroup #nav #main li:nth-last-child(n+10) ~ li:nth-child(6)  { margin-left: 0px; }
       
     #page-head.center-logo hgroup #nav          { position: absolute; margin-top: 0px; text-align: right; top: 100%; transform: none;  -webkit-transform: none; }
-    #page-head hgroup #nav						{ display: block!important; width: 100%; max-height: 0px; overflow: hidden; -webkit-transition: max-height 0.8s; -moz-transition: max-height 0.8s; transition: max-height 0.8s; position: absolute; z-index: 2; width: auto; top: 50px; right: 0px; width: 100%; overflow-y: hidden; background: #333;  }
+    #page-head hgroup #nav						{ display: block!important; width: 100%; height: 0px; overflow: hidden; -webkit-transition: height 0.8s; -moz-transition: height 0.8s; transition: height 0.8s; position: absolute; z-index: 2; width: auto; top: 50px; right: 0px; width: 100%; overflow-y: hidden; background: #333;  }
     #page-head hgroup #nav #main                { text-align: right; display: block!important; }
 	#page-head hgroup #nav #main,
     #page-head hgroup #nav #main li	            { display: block; }
@@ -496,18 +496,6 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
     #page-head hgroup #toggle:checked ~ .toggle span:nth-child(2) { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
     #page-head hgroup #toggle:checked ~ .toggle span:nth-child(3) { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
     #page-head hgroup #toggle:checked ~ .toggle span:nth-child(4) { top: 14px; width: 0%; left: 50%; }  
-    
-    
-    
-    
-    #page-head hgroup #toggle:checked ~ #nav	{ display: block!important; max-height: calc( 100vh - 80px )!important; overflow: auto!important; }
-
-    
-    
-    
-    
-    
-    
-    
+    #page-head hgroup #toggle:checked ~ #nav	{ display: block!important; height: calc( 100vh - 80px )!important; overflow: auto!important; }
 
 }
