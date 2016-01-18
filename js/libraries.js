@@ -46,10 +46,11 @@ function full_heighter(){var e=$(window).height();$(".full-height").css("height"
 $(document).ready(function(){$(".menu-item-has-children > a").removeAttr("href").on("click",function(){$(this).siblings().toggleClass("expand")})});
 
 /* Same as Standard Behavior, except it now auto-closes menus when another is open */
-// $(document).ready(function(){$(".menu-item-has-children > a").removeAttr("href").on("click",function(){$(".menu-item-has-children > ul").removeClass("expand");$(this).siblings().toggleClass("expand");})});
+// $(document).ready(function(){$(".menu-item-has-children > a").removeAttr("href").on("click",function(){$(this).siblings("ul").hasClass("expand")?$(this).siblings("ul").removeClass("expand"):($(".menu-item-has-children > a").siblings("ul").removeClass("expand"),$(this).siblings("ul").toggleClass("expand"))})});
+
 
 /* Adds visible 'toggle' for all menus */
-// $(document).ready(function(){$('<span class="toggle"></span>" ).insertAfter(".menu-item-has-children > a");$('.menu-item-has-children > a + .mobiletoggle').click( function() {if ($(this).hasClass('active')){$(this).siblings().removeClass("expand");$(this).removeClass('active')} else {$(this).siblings().toggleClass("expand");$(this).addClass('active');};});});
+// $(document).ready(function(){$('<span class="toggle"></span>" ).insertAfter(".menu-item-has-children > a");$('.menu-item-has-children > a + .mobiletoggle').click(function() {		if ($(this).hasClass('active')){$(this).siblings().removeClass("expand");$(this).removeClass('active')} else {$(this).siblings().toggleClass("expand");$(this).addClass('active');};});});
 
 /* Double Click Implimentation */
 // $(document).ready(function(){$(".menu-item-has-children > a").click(function(){return $(this).siblings().toggleClass("expand"),!1}).dblclick(function(){return window.location=this.href,!1})})
