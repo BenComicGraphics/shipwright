@@ -24,8 +24,8 @@ div section										{ max-width: 1180px; } /* Base Width is Set Here */
 /* Header Settings */
 
 #page-head										{ background: #323232; position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; }
-#page-head hgroup h1.logo, 
-#page-head hgroup h1.logo a	                    { width: 150px; height: 100px; }
+#page-head hgroup .logo, 
+#page-head hgroup .logo a	                    { width: 150px; height: 100px; }
 #page-head hgroup #nav                          {  }
 #page-head hgroup #nav #main					{  }
 #page-head hgroup #nav #main a					{ color: #FFF; text-decoration: none; margin: 0px; }
@@ -55,8 +55,7 @@ div section										{ max-width: 1180px; } /* Base Width is Set Here */
 	/* Mobile Menu styles */
 	
     #page-head                                  { height: 50px; }
-    #page-head hgroup h1.logo,
-    #page-head hgroup h1.logo a                 { height: 50px; background-size: contain; }
+    #page-head hgroup .logo                     { height: 50px; background-size: contain; }
     #page-head hgroup #nav						{ background: #333;}
     #page-head hgroup #nav #main                {  }
 	#page-head hgroup #nav #main li a		    { padding: 20px;  }	

@@ -1,14 +1,16 @@
+jQuery(function($) {
+
 /* Modifiable code starts here */
+
+// bxSlider Stuff Goes Here //
+
+$(document).ready(function(){ $('.bxslider').bxSlider(); });
+
 
 // Tabs functionality goes here //
 /*
 $(function() { $( "#tabs" ).tabs(); });
 */ 
-    
-// bxSlider Stuff Goes Here //
-/*
-$(document).ready(function(){ $('.bxslider').bxSlider(); });
-*/
 
 // Sticky Header functionality goes here //
 /*
@@ -16,9 +18,9 @@ $(function(){
 	var stickyHeaderTop = $('#header-image').offset().top;
 		$(window).scroll(function(){
         	if( $(window).scrollTop() > stickyHeaderTop ) {
-            	$('.stickynav').addClass('navfixed');
+            	$('#header-image').addClass('navfixed');
 			} else {
-				$('.stickynav').removeClass('navfixed');
+				$('#header-image').removeClass('navfixed');
 			}
 	});
 });
@@ -54,17 +56,8 @@ $(document).ready(function(){
 	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
 	$('#target').parallax("50%", 0.1)
 })
-
 */
 
-// Safari Fixes //
-/*
-$(document).ready(function() {
-   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && ($(document).width() >= 768)){
-  // fixes go here //
-  } 
-});
-*/
 
 // Masonry Code //
 /*
@@ -75,3 +68,5 @@ $container.packery({
   gutter: 0
 });    
 */
+    
+});
