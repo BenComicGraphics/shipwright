@@ -129,6 +129,12 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 .bx-wrapper .bx-controls-direction a            { opacity: 0; transition: opacity .5s ease-in }
 .bx-wrapper .bx-controls-direction a:hover      { opacity: 1; }
 
+/* Background Image Block Settings */
+
+.bg                                             { background-position: center; background-repeat: no-repeat; background-size: cover; position: relative; overflow: hidden; }
+.bg section                                     { position: relative; z-index: 0; }
+.bg img.mobilebg                                { position: absolute; z-index: -1; bottom: 50%; right: 50%; transform: translateX(50%) translateY(50%); -webkit-transform: translateX(50%) translateY(50%); min-width: 100%; min-height: 100%; width: auto; height: auto; display: none; }
+
 /* Masonry Settings */
 
 .blocks										    { display: block; clear: both; }
@@ -152,8 +158,8 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 .box-1-2, .box-2-4, .box-3-6, .box-4-8, 
 .box-5-10, .box-6-12                            { width: 50%; }
 
-.box-1-3, .box-2-6, .box-4-12			    	{ width: 33.33%;  }
-.box-2-3, .box-4-6, .box-8-12				    { width: 66.67%; }
+.box-1-3, .box-2-6, .box-4-12			    	{ width: calc( 100% / 3 ); width: 33.33%; }
+.box-2-3, .box-4-6, .box-8-12				    { width: calc( 200% / 3 ); width: 66.67%; }
 
 .box-1-4, .box-2-8, .box-3-12    			    { width: 25%; }
 .box-3-4, .box-6-8, .box-9-12			    	{ width: 75%; }
@@ -163,55 +169,51 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 .box-3-5, .box-6-10                             { width: 60% }
 .box-4-5, .box-8-10                             { width: 80% }
 
-.box-1-6, .box-2-12                             { width: 16.66%; }
-.box-5-6, .box-10-12                            { width: 83.34%; }
+.box-1-6, .box-2-12                             { width: calc( 100% / 6 ); width: 16.66%; }
+.box-5-6, .box-10-12                            { width: calc( 500% / 6 ); width: 83.34%; }
 
-.box-1-7                                        { width: 14.285%; } 
-.box-2-7                                        { width: 28.571%; }
-.box-3-7                                        { width: 42.857%; }
-.box-4-7                                        { width: 57.143%; }
-.box-5-7                                        { width: 71.429%; }
-.box-6-7                                        { width: 85.714%; }
+.box-1-7                                        { width: calc( 100% / 7 ); width: 14.285%; } 
+.box-2-7                                        { width: calc( 200% / 7 ); width: 28.571%; }
+.box-3-7                                        { width: calc( 300% / 7 ); width: 42.857%; }
+.box-4-7                                        { width: calc( 400% / 7 ); width: 57.143%; }
+.box-5-7                                        { width: calc( 500% / 7 ); width: 71.429%; }
+.box-6-7                                        { width: calc( 600% / 7 ); width: 85.714%; }
 
 .box-1-8                                        { width: 12.5%; } 
 .box-3-8                                        { width: 37.5%; } 
 .box-5-8                                        { width: 62.5%; } 
 .box-7-8                                        { width: 87.5%; } 
 
-.box-1-9                                        { width: 11.111% }
-.box-2-9                                        { width: 22.222% }
-.box-3-9                                        { width: 33.333% }
-.box-4-9                                        { width: 44.444% }
-.box-5-9                                        { width: 55.556% }
-.box-6-9                                        { width: 66.667% }
-.box-7-9                                        { width: 77.778% }
-.box-8-9                                        { width: 88.889% }
+.box-1-9                                        { width: calc( 100% / 9 ); width: 11.111% }
+.box-2-9                                        { width: calc( 200% / 9 ); width: 22.222% }
+.box-3-9                                        { width: calc( 300% / 9 ); width: 33.333% }
+.box-4-9                                        { width: calc( 400% / 9 ); width: 44.444% }
+.box-5-9                                        { width: calc( 500% / 9 ); width: 55.556% }
+.box-6-9                                        { width: calc( 600% / 9 ); width: 66.667% }
+.box-7-9                                        { width: calc( 700% / 9 ); width: 77.778% }
+.box-8-9                                        { width: calc( 800% / 9 ); width: 88.889% }
 
 .box-1-10                                       { width: 10%; }
 .box-3-10                                       { width: 30%; }
 .box-7-10                                       { width: 70%; }
 .box-9-10                                       { width: 90%; }
 
-.box-1-11                                       { width: 9.091%; }
-.box-2-11                                       { width: 18.182%; }
-.box-3-11                                       { width: 27.272%; }
-.box-4-11                                       { width: 36.364%; }
-.box-5-11                                       { width: 45.455%; }
-.box-6-11                                       { width: 54.545%; }
-.box-7-11                                       { width: 63.636%; }
-.box-8-11                                       { width: 72.727%; }
-.box-9-11                                       { width: 81.818%; }
-.box-10-11                                      { width: 90.91%; }
+.box-1-11                                       { width: calc( 100% / 11 ); width: 9.091%; }
+.box-2-11                                       { width: calc( 200% / 11 ); width: 18.182%; }
+.box-3-11                                       { width: calc( 300% / 11 ); width: 27.272%; }
+.box-4-11                                       { width: calc( 400% / 11 ); width: 36.364%; }
+.box-5-11                                       { width: calc( 500% / 11 ); width: 45.455%; }
+.box-6-11                                       { width: calc( 600% / 11 ); width: 54.545%; }
+.box-7-11                                       { width: calc( 700% / 11 ); width: 63.636%; }
+.box-8-11                                       { width: calc( 800% / 11 ); width: 72.727%; }
+.box-9-11                                       { width: calc( 900% / 11 ); width: 81.818%; }
+.box-10-11                                      { width: calc( 1000% / 11 ); width: 90.91%; }
 
-.box-1-12                                       { width: 8.333%; }
-.box-5-12                                       { width: 41.667%; }
-.box-7-12                                       { width: 58.333%; }
-.box-11-12                                      { width: 91.667%; }
+.box-1-12                                       { width: calc( 100% / 12 ); width: 8.333%; }
+.box-5-12                                       { width: calc( 500% / 12 ); width: 41.667%; }
+.box-7-12                                       { width: calc( 700% / 12 ); width: 58.333%; }
+.box-11-12                                      { width: calc( 1100% / 12 ); width: 91.667%; }
 
-.box-1-6:nth-child(2), .box-1-6:nth-child(5), .box-1-6:nth-child(8), .box-1-6:nth-child(11), .box-1-6:nth-child(14),
-.box-1-6:nth-child(17)                          { width: 16.67%; }
-.box-1-3:nth-child(2), .box-1-3:nth-child(5), .box-1-3:nth-child(8), .box-1-3:nth-child(11), .box-1-3:nth-child(14),
-.box-1-3:nth-child(17)                          { width: 33.34%; }
 
 [class^="box-"], [class*=" box-"]               { float: left; display: block; }
 
@@ -234,25 +236,25 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 .listed li:nth-last-child(n+2),
 .listed li:nth-last-child(n+2) ~ li             { width: 50%; }
 .listed li:nth-last-child(n+3),
-.listed li:nth-last-child(n+3) ~ li             { width: 33.33%; }
+.listed li:nth-last-child(n+3) ~ li             { width: calc( 100% / 3 ); width: 33.33%; }
 .listed li:nth-last-child(n+4),
 .listed li:nth-last-child(n+4) ~ li             { width: 25%; }
 .listed li:nth-last-child(n+5),
 .listed li:nth-last-child(n+5) ~ li             { width: 20%; }
 .listed li:nth-last-child(n+6),
-.listed li:nth-last-child(n+6) ~ li             { width: 16.666%; }
+.listed li:nth-last-child(n+6) ~ li             { width: calc( 100% / 6 ); width: 16.666%; }
 .listed li:nth-last-child(n+7),
-.listed li:nth-last-child(n+7) ~ li             { width: 14.285%; }
+.listed li:nth-last-child(n+7) ~ li             { width: calc( 100% / 7 ); width: 14.285%; }
 .listed li:nth-last-child(n+8),
 .listed li:nth-last-child(n+8) ~ li             { width: 12.5%; }
 .listed li:nth-last-child(n+9),
-.listed li:nth-last-child(n+9) ~ li             { width: 11.1111111111%; }
+.listed li:nth-last-child(n+9) ~ li             { width: calc( 100% / 9 ); width: 11.1111111111%; }
 .listed li:nth-last-child(n+10),
 .listed li:nth-last-child(n+10) ~ li            { width: 10%; }
 .listed li:nth-last-child(n+11),
-.listed li:nth-last-child(n+11) ~ li            { width: 9.091%; }
+.listed li:nth-last-child(n+11) ~ li            { width: calc( 100% / 11 ); width: 9.091%; }
 .listed li:nth-last-child(n+12),
-.listed li:nth-last-child(n+12) ~ li            { width: 8.333333%; }
+.listed li:nth-last-child(n+12) ~ li            { width: calc( 100% / 12 ); width: 8.333333%; }
 
 /* Alignment and Flexbox awesomeness */
 
@@ -337,20 +339,6 @@ aside .widgets li								{ width: 100%; display: block; box-sizing: border-box; 
 ::-moz-placeholder                              { color: #848484; }
 :-ms-input-placeholder                          { color: #848484; }
 
-/* Contact Form Styles */
-
-form.wpcf7-form span                            { width: 50%; padding: 10px; float: left; }
-form.wpcf7-form span.your-message               { width: 100%; }
-form.wpcf7-form input[type=radio]               { width: 20px; height: 20px; -webkit-appearance: radio; }
-form.wpcf7-form input[type=checkbox]            { width: 20px; height: 20px; -webkit-appearance: checkbox; }
-form.wpcf7-form input[type=text], form.wpcf7-form input[type=email],  form.wpcf7-form select,
-form.wpcf7-form textarea                        { width: 100%; border: 1px solid #000; background: none; outline: 0; box-sizing: border-box; -moz-box-sizing: border-box; height: 30px; padding-left: 15px; }
-form.wpcf7-form textarea                        { height: 100px; resize: none; }
-
-form.wpcf7-form ::-webkit-input-placeholder      { color: #848484; }
-form.wpcf7-form :-moz-placeholder                { color: #848484; }
-form.wpcf7-form ::-moz-placeholder               { color: #848484; }
-form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 
 /* Footer Settings */
 
@@ -406,18 +394,6 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
 .social.color .ig a                             { color: #517fa4 }
 .social.color .pi a                             { color: #cb2027 }
 
-/* Sharedaddy/Jetpack Sharing Settings */
-
-.sharedaddy .sd-title                           { display: none; }
-.sharedaddy                                     { text-align: left; }
-.sharedaddy .sd-content ul li a.sd-button{ width: 20px; height: 20px; background-color: none!important; border: none!important; box-shadow: none!important; margin: 0px 10px 5px 0px; border-radius: 5px!important; }
-.sharedaddy .sd-content ul li a.sd-button:before{ font-family: 'Icons'; font-size: 28px; text-align: left; }
-
-.sharedaddy .sd-content ul .share-facebook a.sd-button:before       { content: "\f230"!important; color: #3b5998!important } 
-.sharedaddy .sd-content ul .share-twitter a.sd-button:before        { content: "\f081"!important; color: #00aced!important }
-.sharedaddy .sd-content ul .share-google-plus-1 a.sd-button:before  { content: "\f0d4"!important; color: #dd4b39!important }
-.sharedaddy .sd-content ul .share-linkedin a.sd-button:before       { content: "\f08c"!important; color: #007bb6!important }
-
 .sfc											{ display: block; width: 20px; height: 20px; color: #FFF; float: right; text-decoration: none; background-image: url('../images/steadfast.svg'); background-size: contain }
 
 
@@ -441,7 +417,8 @@ form.wpcf7-form :-ms-input-placeholder           { color: #848484; }
     .m-single                                   { float: none!important; width: 100%!important; }
     .m-half                                     { float: left!important; width: 50%!important; }
     .m-third                                    { float: left!important; width: 33.333%!important; }
-	.mobileonly, .rpw, .justified    			{ display: block!important; }
+    .bg img.mobilebg, 
+    .mobileonly, .rpw, .justified    			{ display: block!important; }
 	article img, .alignright, .alignleft		{ max-width: 90%!important; height: auto!important; margin: 15px auto!important; float: none!important; }
 	.twocol, .threecol, .fourcol				{ column-count: 1; -webkit-column-count: 1; -moz-column-count: 1; }
     

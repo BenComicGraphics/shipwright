@@ -11,7 +11,18 @@ $(document).ready(function(){ $('.bxslider').bxSlider(); });
 /*
 $(function() { $( "#tabs" ).tabs(); });
 */ 
-
+    
+// Equal Heights Here //
+/*    
+$(function() {
+    $('.item').matchHeight(options);
+});
+*/
+// WOW.js //
+    
+/* new WOW().init(); */
+    
+    
 // Sticky Header functionality goes here //
 /*
 $(function(){

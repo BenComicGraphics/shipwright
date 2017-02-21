@@ -3,6 +3,7 @@
 
 @import url(fonts.css);
 @import url(plugins.css);
+@import url(animate.css);
 @import url(keel.css);
 
 /* Base Template Settings */
@@ -35,6 +36,8 @@ div section										{ max-width: 1180px; } /* Base Width is Set Here */
 /* Header Image Settings */
 
 #header-image, #header-image ul.bxslider li		{  }
+.vidmodal                                       { display: none; }
+
 
 /* Content Settings */
 
