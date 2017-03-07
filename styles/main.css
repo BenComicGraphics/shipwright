@@ -26,6 +26,17 @@ div section										{ max-width: 1180px; } /* Base Width is Set Here */
 [class^="box-"], [class*=" box-"]               { padding: 15px; } /* Gutter Width is set here.  Just put half the gutter width here. */
 .cta, input[type=submit], button				{  }
 
+article h1, .h1                                 {  }
+article h2, .h2                                 {  }
+article h3, .h3                                 {  }
+article h4, .h4                                 {  }
+article h5, .h5                                 {  }
+article h6, .h6                                 {  }
+article blockquote, .blockquote                 {  }
+article blockquote cite, .blockquote cite       {  }
+
+
+
 /* Kitchen Sink junk, please delete */
 
 #kitchensink [class^="box-"],
@@ -51,6 +62,46 @@ div section										{ max-width: 1180px; } /* Base Width is Set Here */
 /* Content Settings */
 
 #content main a                                 { color: #333; text-decoration: none; } /* Main Link Style */
+
+/* Widgets Settings */
+
+aside .widgets									{ list-style-type: none; }
+aside .widgets li								{ width: 100%; display: block; box-sizing: border-box; padding: 15px; }
+
+/* Search Bar */
+
+#searchform										{ display: inline-block; font-size: 0px; line-height: 0px; position: relative; } 
+#searchform input, #searchform button			{ display: inline-block; float: left; }
+#searchform input								{ padding: 5px; height: 30px; box-sizing: border-box; width: 100%; border: 1px solid #333; border-right: 0px; font-size: 15px; }
+#searchform button								{ height: 30px; padding: 5px; border: 1px solid #333; border-left: 0px; font-size: 30px; background: #FFF; width: 30px; color: #333; font-family: 'FontAwesome'; -webkit-transition: background-color 1000ms linear; -moz-transition: background-color 1000ms linear; -o-transition: background-color 1000ms linear; -ms-transition: background-color 1000ms linear; transition: background-color 1000ms linear; cursor: pointer; position: absolute; top: 0px; right: 0px; }
+#searchform button:before						{ content: "\f002"; position: absolute; top: 0px; left: 0px; line-height: 26px; }
+#searchform input[type=search]:focus			{ outline: none; }
+#searchform input[type=search]:focus + button	{ color: #FFF; background: #333; }
+
+/* Comments Styles */
+
+#comments:before								{ clear: both; display: block; width: 1px; height: 1px; content: " "; }
+#comments .comments-title						{ font-size: 1.1em; color: #333; text-decoration: none; margin-bottom: 25px; }
+#comments ol, #comments ul						{ list-style-type: none; padding: 25px; }
+#comments .avatar								{ border-radius: 34px; }
+#comments .comment-author,
+#comments .comment-author .fn
+#comments .comment-author .says					{ letter-spacing: 1px; font-weight: 800; color: #31312e; font-size: 1.3em; margin-bottom: 15px; }
+#comments .commentmetadata						{ margin-bottom: 20px; }
+#comments .commentmetadata a					{ color: #333; font-style: italic; font-size: .9em; } 
+#comments .commentmetadata .comment-edit-link	{ color: #333; }
+#comments .comment-body							{ margin: 20px auto; }
+#comments .reply								{ text-align: right; }
+#comments .children								{ background: rgba(255,255,255,.75); border-radius: 15px; }
+#comments label									{ display: block; }
+#comments textarea								{ resize: none; display: block; padding: 5px; width: 100%; }
+
+/* Form Settings */
+
+::-webkit-input-placeholder                     { color: #848484; }
+:-moz-placeholder                               { color: #848484; }
+::-moz-placeholder                              { color: #848484; }
+:-ms-input-placeholder                          { color: #848484; }
 
 /* Footer Settings */
 

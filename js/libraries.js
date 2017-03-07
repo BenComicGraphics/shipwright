@@ -51,19 +51,22 @@ jQuery(function($) {
 
 // Common Scripts //
 
-$(document).ready(function(){jQuery("#tree ul").hide(),$("#tree li").each(function(){var e=jQuery("<span></span>");e.prependTo(this),jQuery(this).has("ul").size()>0&&(e.addClass("collapsed"),e.click(function(){var e=jQuery(this);e.toggleClass("collapsed expanded"),e.siblings("ul").toggle()}))})}),$(document).ready(function(){$("p iframe[src*='youtube.com']").wrap("<div class='video-container'/>"),$("p iframe[src*='vimeo.com']").wrap("<div class='video-container'/>")}),$(".vid-modal").on($.modal.BEFORE_CLOSE,function(){vimeoWrap=$(this),vimeoWrap.html(vimeoWrap.html())}),$(document).ready(function(){$(".smoothscroll").click(function(){var e=$(this.hash);return 0==e.length&&(e=$('a[name="'+this.hash.substr(1)+'"]')),0==e.length&&(e=$("html")),$("html, body").animate({scrollTop:e.offset().top},500),!1})}),$(".vidmodal").each(function(){$(this).find("iframe")[0].src+="&autoplay=1";var a=$(this).find("iframe").attr("src");$(this).find("iframe").attr("src",""),$(this).on($.modal.OPEN,function(b,c){$(this).find("iframe").attr("src",a)}),$(this).on($.modal.BEFORE_CLOSE,function(a,b){$(this).find("iframe").attr("src","")})});
+$(document).ready(function(){jQuery("#tree ul").hide(),$("#tree li").each(function(){var a=jQuery("<span></span>");a.prependTo(this),jQuery(this).has("ul").size()>0&&(a.addClass("collapsed"),a.click(function(){var a=jQuery(this);a.toggleClass("collapsed expanded"),a.siblings("ul").toggle()}))})}),$(document).ready(function(){$("p iframe[src*='youtube.com']").wrap("<div class='video-container'/>"),$("p iframe[src*='vimeo.com']").wrap("<div class='video-container'/>")}),$(".vid-modal").on($.modal.BEFORE_CLOSE,function(){vimeoWrap=$(this),vimeoWrap.html(vimeoWrap.html())}),$(document).ready(function(){$(".smoothscroll").click(function(){var a=$(this.hash);return 0==a.length&&(a=$('a[name="'+this.hash.substr(1)+'"]')),0==a.length&&(a=$("html")),$("html, body").animate({scrollTop:a.offset().top},500),!1})}),$(".vidmodal").each(function(){$(this).find("iframe")[0].src+="&autoplay=1";var a=$(this).find("iframe").attr("src");$(this).find("iframe").attr("src",""),$(this).on($.modal.OPEN,function(b,c){$(this).find("iframe").attr("src",a)}),$(this).on($.modal.BEFORE_CLOSE,function(a,b){$(this).find("iframe").attr("src","")})}),$(document).ready(function(){$("nav.default .menu-item-has-children > a").removeAttr("href").on("click",function(){$(this).siblings().toggleClass("expand")})}),$(document).ready(function(){$("nav.autoclose .menu-item-has-children > a").removeAttr("href").on("click",function(){$(this).siblings("ul").hasClass("expand")?$(this).siblings("ul").removeClass("expand"):($(".menu-item-has-children > a").siblings("ul").removeClass("expand"),$(this).siblings("ul").toggleClass("expand"))})}),$(document).ready(function(){$('<span class="toggle"></span>').insertAfter("nav.addtoggle .menu-item-has-children > a"),$(".menu-item-has-children > a + .toggle").click(function(){$(this).hasClass("active")?($(this).siblings().removeClass("expand"),$(this).removeClass("active")):($(this).siblings().toggleClass("expand"),$(this).addClass("active"))})}),$(document).ready(function(){$("nav.doubleclick .menu-item-has-children > a").click(function(){return $(this).siblings().toggleClass("expand"),!1}).dblclick(function(){return window.location=this.href,!1})});
     
-/* Standard Behavior for menus; all menus have to be toggled */
-$(document).ready(function(){$(".menu-item-has-children > a").removeAttr("href").on("click",function(){$(this).siblings().toggleClass("expand")})});
-
-/* Same as Standard Behavior, except it now auto-closes menus when another is open */
-// $(document).ready(function(){$(".menu-item-has-children > a").removeAttr("href").on("click",function(){$(this).siblings("ul").hasClass("expand")?$(this).siblings("ul").removeClass("expand"):($(".menu-item-has-children > a").siblings("ul").removeClass("expand"),$(this).siblings("ul").toggleClass("expand"))})});
-
-
-/* Adds visible 'toggle' for all menus */
-// $(document).ready(function(){$('<span class="toggle"></span>" ).insertAfter(".menu-item-has-children > a");$('.menu-item-has-children > a + .mobiletoggle').click(function() {		if ($(this).hasClass('active')){$(this).siblings().removeClass("expand");$(this).removeClass('active')} else {$(this).siblings().toggleClass("expand");$(this).addClass('active');};});});
-
-/* Double Click Implimentation */
-// $(document).ready(function(){$(".menu-item-has-children > a").click(function(){return $(this).siblings().toggleClass("expand"),!1}).dblclick(function(){return window.location=this.href,!1})})
+    $('.left-push-drawer #toggle').change(function() {
+        if($(this).is(":checked")) {
+            $('body').addClass('pushed-left');
+        } else {
+            $('body').removeClass('pushed-left');
+        }        
+    });
+    
+    $('.right-push-drawer #toggle').change(function() {
+        if($(this).is(":checked")) {
+            $('body').addClass('pushed-left');
+        } else {
+            $('body').removeClass('pushed-left');
+        }        
+    });
     
 });

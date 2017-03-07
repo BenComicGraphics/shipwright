@@ -14,12 +14,12 @@
 </head>
 
 <body class="home">
-<header id="page-head" class="center-logo">
+<header id="page-head">
   <hgroup>
     <a href="/" class="logo" style="background-image: url(../images/logo.png);"><span>Website Name</span></a>
     <input type="checkbox" id="toggle" />
 	<label for="toggle" class="toggle" onclick><span></span></label>
-    <nav id="nav">
+    <nav id="nav" class="default right box-7-10">
       <ul id="main" class="justified-edges">
         <li><a href="#">Menu Item 1</a></li>
         <li class="menu-item-has-children">
@@ -30,7 +30,14 @@
             <li><a href="#">Test</a></li>
           </ul>
         </li>
-        <li><a href="#">Menu Item 3</a></li>
+        <li class="menu-item-has-children">
+          <a href="#">Menu Item 3</a>
+          <ul>
+            <li><a href="#">Test</a></li>
+            <li><a href="#">Test</a></li>
+            <li><a href="#">Test</a></li>
+          </ul>
+        </li>
         <li><a href="#">Menu Item 4</a></li>
       </ul>
     </nav>
