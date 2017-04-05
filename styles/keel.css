@@ -92,7 +92,10 @@ div section										{ width: 100%; max-width: 1180px; } /* Base Width is Set He
 #page-head hgroup .logo:hover                   { opacity: 1; }
 #page-head hgroup #nav                          { display: inline-block; height: 100%; }
 #page-head hgroup #nav #main					{ height: 100%; }
+<<<<<<< HEAD
 #page-head hgroup #nav #main li                 { height: 100%; }
+=======
+>>>>>>> a7c7055d8414876dd20a965271f93a9dc241696f
 #page-head hgroup #nav #main a					{ color: #FFF; text-decoration: none; margin: 0px; display: inline-block; }
 #page-head hgroup #nav #main .current-menu-item a, #page-head hgroup #nav #main .active a,
 #page-head hgroup #nav #main a:hover            { color: #FEFEFE; opacity: 1; } /* This is the Hover/Active state for the menu item */
