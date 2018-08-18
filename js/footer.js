@@ -4,34 +4,25 @@ jQuery(function($) {
 
 // bxSlider Stuff Goes Here //
 
-$(document).ready(function(){ $('.bxslider').bxSlider(); });
-
+// $('.bxslider').bxSlider(); //
 
 // Tabs functionality goes here //
-/*
-$(function() { $( "#tabs" ).tabs(); });
-*/ 
     
-// Equal Heights Here //
-/*    
-$(function() {
-    $('.item').matchHeight(options);
-});
-*/
-    
+// $( "#tabs" ).tabs(); }); //
+
 // Sticky Header functionality goes here //
 /*
 $(function(){
 	var stickyHeaderTop = $('#header-image').offset().top;
 		$(window).scroll(function(){
         	if( $(window).scrollTop() > stickyHeaderTop ) {
-            	$('#header-image').addClass('navfixed');
+            	$('#page-head').addClass('navfixed');
 			} else {
-				$('#header-image').removeClass('navfixed');
+				$('#page-head').removeClass('navfixed');
 			}
 	});
 });
 */
 
     
-});
+});  
