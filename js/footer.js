@@ -4,7 +4,7 @@ jQuery(function($) {
 
 // bxSlider Stuff Goes Here //
 
-// $('.bxslider').bxSlider(); //
+$('.bxslider').bxSlider(); //
 
 // Tabs functionality goes here //
     
@@ -23,6 +23,8 @@ $(function(){
 	});
 });
 */
-
+  
+    
+cssVars();
     
 });  
