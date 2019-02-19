@@ -7,15 +7,16 @@
 <title></title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if IE]><script src="../js/ie.js"></script><![endif]-->
 <script src="../js/libraries.js"></script>
 <link href="../styles/keel.css"    rel="stylesheet" type="text/css">
 <link href="../styles/main.css"    rel="stylesheet" type="text/css">
 </head>
 
 <body class="home">
-<header id="page-head" class="center-logo">
-  <hgroup>
+    
+<header id="page-head">
+  <section class="flex-middle-justify">
     <a href="/" class="logo"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 200 100" style="enable-background:new 0 0 200 100;" xml:space="preserve">
 <g>
@@ -32,7 +33,7 @@
 </g>
 </svg></a>
     <input type="checkbox" id="toggle" />
-	<label for="toggle" class="toggle" onclick><span></span></label>
+	<label for="toggle" class="toggle" onclick><i></i></label>
     <nav id="nav" class="default right">
       <ul id="main">
         <li><a href="#">Menu Item 1</a></li>
@@ -55,7 +56,7 @@
         <li><a href="#">Menu Item 4</a></li>
       </ul>
     </nav>
-  </hgroup>
+  </section>
 </header>    
 
 <main>
@@ -69,23 +70,22 @@
 </main>
 
 <footer id="page-foot">
-  <section>
+  <section class="flex-middle-justify">
     
     <address>
       <h5>Address</h5>
-      1234 Anystreet, US<br />Fort Worth, TX 76137
+      1234 Anystreet, US<br />Fort Worth, TX 76137<br />
+      <small>Copyright Company Name</small>
     </address>
     
-    <ul class="social right">
+    <ul class="social">
       <li class="fb"><a href="#"><span>Facebook</span></a></li>
       <li class="tw"><a href="#"><span>Twitter</span></a></li>
       <li class="in"><a href="#"><span>LinkedIn</span></a></li>
       <li class="gp"><a href="#"><span>Google Plus</span></a></li>
     </ul>
     
-  </section>
-  <section>
-    <cite>Copyright Company Name</cite>
+    
   </section>
 </footer>
 <script type="text/javascript" src="../js/footer.js"></script>
