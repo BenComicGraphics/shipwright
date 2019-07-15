@@ -1,10 +1,4 @@
 jQuery(function($) {
-
-/* Modifiable code starts here */
-
-$('.bxslider').bxSlider();
-    
-$( "#tabs" ).tabs();
-
-    
+    $('.bxslider').bxSlider();
+    $( ".tabs" ).tabs();
 });  

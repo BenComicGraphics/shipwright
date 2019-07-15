@@ -7,15 +7,13 @@
     --grid-width:       1180px; /* Base Width is Set Here */
     --grid-gutter:        15px; /* Gutter Width is set here.  Just put half the gutter width here. */
     --header-height:     100px;
-    --footer-height:      80px;
+    --footer-height:     100px;
     
     --primary-color:        #000000;
     --secondary-color:      #333333;
     --tertiary-color:       #FFFFFF;
     --primary-font:         'Lato', sans-serif;
     --secondary-font:       'Times', serif;
-    --icon-font:            'Font Awesome 5 Free';
-    --brand-font:           'Font Awesome 5 Brands';
     --standard-font-size:   16px;
     --line-height:          1.5;
 }
@@ -23,10 +21,10 @@
 /* Base Template Settings */
 
 body											{ font-family: var(--primary-font); }
-#page-head section, 
-#page-foot section, div section					{ max-width: var(--grid-width); } 
-.halves > .half > section                       { max-width: calc( var(--grid-half-width) / 2 ); } 
-.halves > .half > section, .listed li,
+#page-head container, #page-foot container, div container, 
+section container					            { max-width: var(--grid-width); } 
+.halves > .half > container                       { max-width: calc( var(--grid-width) / 2 ); } 
+.halves > .half > container, .listed li,
 [class^="box-"], [class*=" box-"]               { padding: var(--grid-gutter); } 
 .cta				                            {  }
 
@@ -47,25 +45,30 @@ details summary                                 { font-family: var(--primary-fon
  
 /* Header Settings */
 
-#page-head										{ background: var(--primary-color); height: var(--header-height); position: relative; left: 0px; top: 0px; z-index: 1; width: 100%; }
-#page-head section .logo 	                    { width: 150px; height: var(--header-height); }
-#page-head section .logo svg *                  { fill: var(--secondary-color); }
-#page-head section #nav                         {  }
-#page-head section #nav #main					{  }
-#page-head section #nav #main a					{ color: var(--tertiary-color); text-decoration: none; margin: 0px 5px; font-family: var(--primary-font); font-size: var(--standard-font-size); }
-#page-head section #nav #main > li:last-child a { margin-right: 0px; }
-#page-head section #nav #main .current-menu-item a, #page-head section #nav #main .active a,
-#page-head section #nav #main a:hover           { color: var(--secondary-color); opacity: 1; } /* This is the Hover/Active state for the menu item */
+#page-head										{ background: var(--primary-color); height: var(--header-height); position: relative; left: 0px; top: 0px; z-index: 1; width: 100%; box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75); }
+#page-head container                            { height: var(--header-height); }
+#page-head container .logo 	                    { width: 150px; }
+#page-head container .logo svg *                { fill: var(--secondary-color); }
+#page-head container #nav                       {  }
+#page-head container #nav #main					{  }
+#page-head container #nav #main li,
+#page-head container #nav #main a			    { color: var(--tertiary-color); text-decoration: none; margin: 0px 5px; font-family: var(--primary-font); font-size: var(--standard-font-size); color: #FFF; }
+#page-head container #nav #main > li:last-child a { margin-right: 0px; }
+#page-head container #nav #main .current-menu-item a, #page-head container #nav #main .active a,
+#page-head container #nav #main a:hover           { color: var(--secondary-color); opacity: 1; } /* This is the Hover/Active state for the menu item */
+#page-head.toggle-menu container .toggle          { width: 45px; }
+#page-head.toggle-menu container > .toggle:before, #page-head.toggle-menu container > .toggle:after, #page-head.toggle-menu container > .toggle i:before, #page-head.toggle-menu container > .toggle i:after    { background: #FFF; }
+#nav.addtoggle #main .menu-item-has-children span.toggler { position: absolute; top: 0%; right: 0px; transform: translateY(50%); }
 
 /* Header Image Settings */
 
-#header-image, #header-image ul.bxslider li		{  }
-#header-image section                           {  }
+.header-image, .header-image container          { height: 400px; }
 
 /* Content Settings */
 
 main                                            { min-height: calc( 100vh - var(--header-height) - var(--footer-height) ) }
 main a                                          { color: var(--primary-color); text-decoration: none; } /* Main Link Style */
+main .content .boxcontainer div div             { background: var(--secondary-color); color: #FFF; padding: 10px; min-height: 40px; font-size: 10px; }
 
 /* Form Settings */
 
@@ -75,10 +78,10 @@ main a                                          { color: var(--primary-color); t
 :-ms-input-placeholder                          { color: var(--secondary-color); }
 
 input[type=radio]                               { width: 20px; height: 20px; display: inline-block; border-width: 2px; border-style: solid; border-color: var(--primary-color); position: absolute; border-radius: 50%; }
-input[type=radio]:checked:after                 { content: ""; position: absolute; top: 5px; left: 5px; width: 10px; display: block; padding-bottom: 10px; background-color: var(--primary-color); border-radius: 50%; }
+input[type=radio]:checked:after                 { content: ""; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); width: 10px; display: block; height: 10px; background-color: var(--primary-color); border-radius: 50%; }
 
 input[type=checkbox]                            { width: 20px; height: 20px; display: inline-block; border-width: 2px; border-style: solid; border-color: var(--primary-color); position: absolute; }
-input[type=checkbox]:checked:after              { content: "✔"; position: absolute; top: 5px; left: 5px; color: var(--primary-color); }
+input[type=checkbox]:checked:after              { content: "✔"; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); color: var(--primary-color); }
 
 textarea, input[type=search], input[type=number], input[type=email], select, input[type=date],
 input[type=text]                                { font-family: var(--primary-font); width: 100%; height: 50px; padding-left: 15px; border-width: 1px; border-style: solid; border-color: var(--primary-color); font-size: var(--standard-font-size); margin-bottom: var(--standard-font-size) }
@@ -87,15 +90,13 @@ input[type=text]                                { font-family: var(--primary-fon
 .select-wrapper:after                           { position: absolute; top: 0px; right: 0px; width: 50px; height: 50px; display: -webkit-flexbox; display: -ms-flexbox; display: -webkit-flex; display: flex;  -webkit-flex-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; content: "\f0d7"; font-family: 'Font Awesome 5 Free'; font-weight: 900;  }
 select                                          { padding-right: 50px; }
 textarea                                        { height: 100px; padding-top: 15px; }
-
-input[type=submit], button, input[type=button]  { font-family: var(--primary-font);  }
+input[type=submit], button, input[type=button]  { font-family: var(--primary-font); }
+form[role=search] button                        { font-family: var(--icon-font); font-weight: 900; }
 
 /* Footer Settings */
-
-#page-foot										{ height: var(--footer-height); background: var(--secondary-color); }
-#page-foot section                              {  }
+#page-foot										{ background: var(--secondary-color); }
+#page-foot container                            { height: var(--footer-height);  }
 #page-foot .social li a                         { color: var(--primary-color); }
-#page-foot cite									{  }
 
 @media handheld, only screen and (max-width: 1179px) and (min-width: 1024px) { /* Under the grid width to iPad Landscape */
 
@@ -113,11 +114,12 @@ input[type=submit], button, input[type=button]  { font-family: var(--primary-fon
 	
 	/* Mobile Menu styles */
 	
-    #page-head section #nav						{ background: var(--secondary-color);}
-    #page-head section #nav #main               {  }
-	#page-head section #nav #main li a		    { padding: 20px; }	
-	#page-head section #nav #main li ul	        {  }
-    #page-head section #nav #main li ul li a    {  }
+    #page-head container .logo > *                { max-height: var(--header-height); }
+    #page-head container #nav					  { background: var(--secondary-color);}
+    #page-head container #nav #main               {  }
+	#page-head container #nav #main li a		  { padding: 20px; }	
+	#page-head container #nav #main li ul	      {  }
+    #page-head container #nav #main li ul li a    {  }
 
 
 }
